@@ -8,14 +8,14 @@ __version__ = "0.1.0"
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent
 
-# Load the Keras model
+# Loading the Keras model
 model = load_model(f"{BASE_DIR}/phrase_model-{__version__}.keras")
 
-# Load the tokenizer
+# Loading the tokenizer
 with open(f"{BASE_DIR}/tokenizer-{__version__}.pickle", 'rb') as handle:
     tokenizer = pickle.load(handle)
 
-# Define the maximum length of sequences based on your model training
+#Maxlength of sequences based on training
 maxlen = 111
 
 classes = ["ft", "mr", "ct", "pkg", "ch", "cnc"]
